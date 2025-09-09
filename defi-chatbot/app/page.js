@@ -72,7 +72,7 @@ export default function Home() {
     setIsLoading(true);
 
     // Send transaction
-    const tx = await contract.sendRequest(query);
+    const tx = await contract.requestAIAssistance(aiRequestSource, query, "");
     const receipt = await tx.wait();
 
     console.log("Transaction mined:", receipt.transactionHash);
